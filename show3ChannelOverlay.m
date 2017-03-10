@@ -28,7 +28,7 @@ classdef show3ChannelOverlay<masivPlugin
                     rethrow(err)
                 end
             end
-            [xoffset, yoffset]=checkTiffFileForOffset(info);
+            [xoffset, yoffset]=masiv.fileio.checkTiffFileForOffset(info);
             xView=xView-xoffset;
             yView=yView-yoffset;
             %% Load
