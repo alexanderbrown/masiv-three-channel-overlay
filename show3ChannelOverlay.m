@@ -171,7 +171,7 @@ function I=doUnmix(I)
 end
 
 function emissionMatrixNormalised=loadUnmixingVectorsNoGui()
-    basedir=fileparts(which('show3ChannelOverlay'));
+    basedir=fileparts(mfilename('fullpath'));
     sourceDirectory=fullfile(basedir, 'sources');
     
     filesToLoad=cellfun(@(x) fullfile(sourceDirectory, [x '.csv']),  {'mCherry', 'GFP', 'Cerulean'},'UniformOutput',0 );
@@ -179,7 +179,7 @@ function emissionMatrixNormalised=loadUnmixingVectorsNoGui()
     
     %% Load spectral data
     S=cell(size(spectraNames));
-    for ii=1:length(spectraNames);
+    for ii=1:length(spectraNames)
         S{ii}=load(filesToLoad{ii});
     end
     
