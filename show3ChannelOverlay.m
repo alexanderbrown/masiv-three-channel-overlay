@@ -171,8 +171,8 @@ function I=doUnmix(I)
 end
 
 function emissionMatrixNormalised=loadUnmixingVectorsNoGui()
-    basedir=fileparts(which('MaSIV'));
-    sourceDirectory=fullfile(basedir, 'resources', 'unmix','sources');
+    basedir=fileparts(which('show3ChannelOverlay'));
+    sourceDirectory=fullfile(basedir, 'sources');
     
     filesToLoad=cellfun(@(x) fullfile(sourceDirectory, [x '.csv']),  {'mCherry', 'GFP', 'Cerulean'},'UniformOutput',0 );
     spectraNames=strrep(strrep(filesToLoad, '.csv', ''),sourceDirectory, '');
